@@ -38,12 +38,14 @@ selected_countries = st.sidebar.multiselect(
 
 min_date = df["InvoiceDate"].min().date()
 max_date = df["InvoiceDate"].max().date()
-
+  
 date_range = st.sidebar.date_input(
     "Select Date Range",
     value=(min_date, max_date),
     min_value=min_date,
-    max_value=max_date
+    max_value=max_date,
+    key="sales_date_filter"
+
 )
 
 product_search = st.sidebar.text_input(
