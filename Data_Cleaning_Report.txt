@@ -1,0 +1,42 @@
+
+DATA CLEANING REPORT
+====================
+
+Dataset: Online Retail
+
+1. Original number of rows: 541909
+
+2. Rows after cleaning: 524878
+
+3. Rows removed: 17031
+
+4. Missing values before cleaning:
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135080
+Country             0
+
+5. Missing values after cleaning:
+InvoiceNo           0
+StockCode           0
+Description         0
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     132186
+Country             0
+
+6. Duplicate rows before cleaning:
+5268
+
+7. Duplicate rows after cleaning:
+0
+
+Cleaning steps:
+- Removed duplicate records.
+- Removed rows missing important transaction fields.
+- Removed records with non-positive quantities or prices.
