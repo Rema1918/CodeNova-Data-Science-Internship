@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 st.title("📊 Online Retail Sales Analytics")
-st.caption("Interactive dashboard | CodeNova Data Science Internship")
+st.caption("Interactive dashboard")
 
 @st.cache_data
 def load_data():
