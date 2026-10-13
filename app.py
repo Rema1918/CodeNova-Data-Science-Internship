@@ -65,12 +65,14 @@ if selected_countries:
 else:
     filtered = filtered.iloc[0:0]
 
-if isinstance(date_range, (tuple, list)) and len(date_range) == 2:
-    start_date, end_date = date_range
+
+if selected_months:
     filtered = filtered[
-        (filtered["InvoiceDate"].dt.date >= start_date) &
-        (filtered["InvoiceDate"].dt.date <= end_date)
+        filtered["InvoiceDate"].dt.strftime("%Y-%m").isin(selected_months)
     ]
+else:
+    filtered = filtered.iloc[0:0]
+
 
 if product_search.strip():
     filtered = filtered[
