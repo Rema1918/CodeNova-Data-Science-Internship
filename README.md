@@ -1,4 +1,3 @@
-# CodeNova-Data-Science-Internship
 # CodeNova Data Science Internship
 
 ## Project Overview
