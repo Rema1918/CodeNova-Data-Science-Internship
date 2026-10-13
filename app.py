@@ -26,6 +26,17 @@ def load_data():
 
 df = load_data()
 
+df["Month"] = df["InvoiceDate"].dt.strftime("%Y-%m")
+
+months = sorted(df["Month"].dropna().unique())
+
+selected_months = st.sidebar.multiselect(
+    "Select Month(s)",
+    months,
+    default=months
+
+)
+
 # Sidebar filters
 st.sidebar.header("🔎 Dashboard Filters")
 
@@ -39,17 +50,6 @@ selected_countries = st.sidebar.multiselect(
 min_date = df["InvoiceDate"].min().date()
 max_date = df["InvoiceDate"].max().date()
   
-
-df["Month"] = df["InvoiceDate"].dt.strftime("%Y-%m")
-
-months = sorted(df["Month"].dropna().unique())
-
-selected_months = st.sidebar.multiselect(
-    "Select Month(s)",
-    months,
-    default=months
-
-)
 
 product_search = st.sidebar.text_input(
     "Search Product",
