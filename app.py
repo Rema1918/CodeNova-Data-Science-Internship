@@ -8,7 +8,7 @@ st.write("Interactive analysis of online retail sales")
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv("Cleaned_Online_Retail.csv")
+    pd.read_csv("Online_Retail_Sample.csv")
     data["InvoiceDate"] = pd.to_datetime(data["InvoiceDate"])
     data["Revenue"] = data["Quantity"] * data["UnitPrice"]
     return data
