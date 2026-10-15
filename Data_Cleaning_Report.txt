@@ -40,3 +40,16 @@ Cleaning steps:
 - Removed duplicate records.
 - Removed rows missing important transaction fields.
 - Removed records with non-positive quantities or prices.
+
+## 8. Outlier Analysis (IQR Method)
+
+The Interquartile Range (IQR) method was used to identify potential outliers in the Quantity and UnitPrice columns.
+
+| Column | Lower Bound | Upper Bound | Outlier Count |
+|---|---:|---:|---:|
+| Quantity | -14.00 | 26.00 | 27,111 |
+| UnitPrice | -3.07 | 8.45 | 37,827 |
+
+Potential outliers were identified based on values outside the IQR boundaries. These records were not automatically removed because extreme values may represent genuine transactions. Further investigation is recommended before excluding them.
+
+The original dataset was preserved, and outlier detection was performed on the cleaned dataset.
